@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="572.0" prefWidth="847.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.demo.controlador.FormularioControlador">
+   <children>
+      <VBox prefHeight="539.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <AnchorPane prefHeight="239.0" prefWidth="725.0">
+               <children>
+                  <Label layoutX="264.0" layoutY="6.0" text="Semaforos Inteligentes">
+                     <font>
+                        <Font name="System Bold Italic" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="23.0" layoutY="52.0" text="Tipo" />
+                  <RadioButton id="rbVehicular" fx:id="rbVehicular" layoutX="63.0" layoutY="36.0" mnemonicParsing="false" selected="true" text="Semaforo Vehicular">
+                     <toggleGroup>
+                        <ToggleGroup fx:id="rbTipo" />
+                     </toggleGroup>
+                  </RadioButton>
+                  <RadioButton fx:id="rbPeatonal" layoutX="63.0" layoutY="61.0" mnemonicParsing="false" text="Semaforo Peatonal" toggleGroup="$rbTipo" />
+                  <Label layoutX="23.0" layoutY="96.0" text="Id" />
+                  <TextField id="txtId" fx:id="txtId" layoutX="63.0" layoutY="95.0" prefHeight="25.0" prefWidth="122.0" />
+                  <TextField fx:id="txtEstado" layoutX="63.0" layoutY="138.0" prefHeight="25.0" prefWidth="122.0" />
+                  <Label layoutX="16.0" layoutY="144.0" text="Estado" />
+                  <Label layoutX="8.0" layoutY="185.0" text="Id Sensor" />
+                  <TextField id="txtIdSensor" fx:id="txtIdSensor" layoutX="63.0" layoutY="181.0" prefHeight="25.0" prefWidth="122.0" />
+                  <ComboBox id="cBoxTipo" fx:id="cBoxTipo" layoutX="296.0" layoutY="48.0" prefHeight="25.0" prefWidth="125.0" />
+                  <Label layoutX="217.0" layoutY="53.0" text="Tipo Sensor" />
+                  <Label layoutX="209.0" layoutY="145.0" text="Tiempo verde" />
+                  <Label layoutX="214.0" layoutY="188.0" text="Tiempo rojo" />
+                  <Label layoutX="223.0" layoutY="158.0" text="Peatonal" />
+                  <Label layoutX="227.0" layoutY="201.0" text="Peatonal" />
+                  <TextField id="txtTiempoVerde" fx:id="txtTiempoVerde" layoutX="298.0" layoutY="146.0" prefHeight="25.0" prefWidth="122.0" />
+                  <TextField id="txtTiempoRojo" fx:id="txtTiempoRojo" layoutX="298.0" layoutY="192.0" prefHeight="25.0" prefWidth="122.0" />
+                  <Label layoutX="465.0" layoutY="49.0" text="Numero carriles" />
+                  <Label layoutX="478.0" layoutY="64.0" text="Vehicular" />
+                  <TextField id="txtNumCarri" fx:id="txtNumCarri" layoutX="569.0" layoutY="49.0" prefHeight="25.0" prefWidth="122.0" />
+                  <Label layoutX="217.0" layoutY="99.0" text="Ubicacion" />
+                  <TextField fx:id="txtUbicacion" layoutX="298.0" layoutY="97.0" prefHeight="25.0" prefWidth="125.0" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="61.0" prefWidth="725.0" style="-fx-background-color: gray;">
+               <children>
+                  <Button id="btnguar" fx:id="btnguar" layoutX="79.0" layoutY="19.0" mnemonicParsing="false" onAction="#pressGuar" text="Guardar" />
+                  <Button id="btnModif" fx:id="btnModif" layoutX="191.0" layoutY="20.0" mnemonicParsing="false" onAction="#pressMod" text="Modificar" />
+                  <Button id="btnElim" fx:id="btnElim" layoutX="313.0" layoutY="21.0" mnemonicParsing="false" onAction="#pressElim" text="Eliminar" />
+                  <Button id="btnSeri" fx:id="btnSeri" layoutX="440.0" layoutY="21.0" mnemonicParsing="false" onAction="#pressSeria" text="Serializar" />
+                  <Button id="btnDeseria" fx:id="btnDeseria" layoutX="545.0" layoutY="20.0" mnemonicParsing="false" onAction="#pressDes" text="Deserializar" />
+               </children>
+            </AnchorPane>
+            <AnchorPane prefHeight="236.0" prefWidth="600.0">
+               <children>
+                  <TableView id="TableV" fx:id="TableV" onMousePressed="#pressTable" prefHeight="266.0" prefWidth="847.0">
+                    <columns>
+                        <TableColumn id="tbTipo" fx:id="tbTipo" prefWidth="89.0" text="Tipo" />
+                      <TableColumn id="tbId" fx:id="tbId" prefWidth="59.0" text="Id" />
+                      <TableColumn id="tbUbicacion" fx:id="tbUbicacion" prefWidth="99.0" text="Ubicacion" />
+                        <TableColumn id="tbEstado" fx:id="tbEstado" prefWidth="77.0" text="Estado" />
+                        <TableColumn id="tbIdSensor" fx:id="tbIdSensor" prefWidth="102.0" text="IdSensor" />
+                        <TableColumn id="tbTiipoSensor" fx:id="tbTiipoSensor" prefWidth="142.0" text="TipoSensor" />
+                        <TableColumn id="tbTiempoV" fx:id="tbTiempoV" prefWidth="88.0" text="TiempoVerde" />
+                        <TableColumn id="tbTiempoR" fx:id="tbTiempoR" prefWidth="79.0" text="TiempoRojo" />
+                        <TableColumn id="tbNumero" fx:id="tbNumero" prefWidth="111.0" text="NumerioCarriles" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
